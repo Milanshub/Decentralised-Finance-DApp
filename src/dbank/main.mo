@@ -10,7 +10,8 @@ actor DBank {
 
 
   // "func" is function in Motoko lang. "Public" exposes the function to then be used 
-  // in the commmand line or Candid. "Nat" is a positive number we can input in Candid  
+  // in the commmand line or Candid. "Nat" is a positive number we can input in Candid.
+  //ICP Canister "Update Call"  
   public func topUp(amount: Nat) {
     currentValue += amount;  
     Debug.print(debug_show(currentValue))
@@ -26,6 +27,11 @@ actor DBank {
       Debug.print("Amount too large. Current Value less than zero");
       }
   };  
+
+  // ICP Canister "Query Call". So to call a var directly 
+  public query func checkBalance():async Nat {
+    return currentValue; 
+  };
  
 };
 
