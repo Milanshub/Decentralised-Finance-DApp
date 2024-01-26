@@ -2,11 +2,14 @@ import Debug "mo:base/Debug";
 
 // creating a canister by the name DBank
 actor DBank {
-  var currentValue = 300; 
-  currentValue := 100; 
+  // adding "stable" is an Orthogonal Presistence. Holds state over many circles
+  // and calls 
+  stable var currentValue = 300; 
+  // currentValue := 100; 
 
   // creates a var like a const in js that will never change, while var changes
-  let id = 92834523489476; 
+  let id = 9283452348947; 
+   Debug.print(debug_show(id));
 
 
   // "func" is function in Motoko lang. "Public" exposes the function to then be used 
